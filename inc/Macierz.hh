@@ -46,4 +46,5 @@ std::istream& operator >> (std::istream &Strm, Macierz &Mac);
 std::ostream& operator << (std::ostream &Strm, const Macierz &Mac);
 Macierz Gauss(Macierz Mac);
 double WyznG(Macierz Mac);
+Macierz root(Macierz Mac);
 #endif

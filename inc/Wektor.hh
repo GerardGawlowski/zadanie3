@@ -52,4 +52,5 @@ Wektor operator - (Wektor wk1, Wektor wk2);
 Wektor operator + (Wektor wk1, Wektor wk2);
 double operator * (Wektor wk1, Wektor wk2);
 Wektor operator * (Wektor wk1, double wk2);
+Wektor IloczynWR3(Wektor wk1, Wektor wk2);
 #endif

@@ -83,3 +83,20 @@ double WyznG(Macierz Mac)
     }
     return wynik;
 }
+
+Macierz root(Macierz Mac)
+{
+    Macierz Wynik;
+    for (int i = 0; i < ROZMIAR; i++)
+    {
+        Wektor temp = Mac.getWektor(i);
+        for (int j = 0; j < ROZMIAR; j++)
+        {
+            double a = temp.getSkladowa(j);
+            double b = a * a;
+            temp.setSkladowa(j, b);
+        }
+        Wynik.setWektor(i, temp);
+    }
+    return Wynik;
+}

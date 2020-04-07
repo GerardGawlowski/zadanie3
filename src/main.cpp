@@ -22,7 +22,10 @@ int main()
     Macierz kek;
         cin >> kek;
         cout << endl;
-        Macierz temp = Gauss(kek);
-        cout << temp << endl;
-        cout << WyznG(temp);
+        cout << root(kek);
+
+        Wektor temp1;
+        Wektor temp2;
+        cin >> temp1 >> temp2;
+        cout << IloczynWR3(temp1, temp2);
 }
