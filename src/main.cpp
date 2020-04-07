@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Wektor.hh"
-#include "Macierz.hh"
-#include "UkladRownanLiniowych.hh"
+#include "../inc/wektor.hh"
+#include "../inc/Macierz.hh"
+#include "../inc/UkladRownanLiniowych.hh"
 
 
 
@@ -17,8 +17,12 @@ using namespace std;
 
 int main()
 {
-  UkladRownanLiniowych   UklRown;   // To tylko przykladowe definicje zmiennej
+    cout << endl << " Start programu " << endl << endl;
 
-  
-  cout << endl << " Start programu " << endl << endl;
+    Macierz kek;
+        cin >> kek;
+        cout << endl;
+        Macierz temp = Gauss(kek);
+        cout << temp << endl;
+        cout << WyznG(temp);
 }

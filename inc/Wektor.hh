@@ -14,9 +14,19 @@ class Wektor {
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
   public:
+      double getSkladowa(unsigned int index) 
+      {
+          return skladowa[index];
+      }
+      void setSkladowa(unsigned int index, double wartosc) 
+      {
+          skladowa[index] = wartosc;
+      }
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
    */    
+private:
+    double skladowa[ROZMIAR];
 };
 
 
@@ -38,4 +48,8 @@ std::istream& operator >> (std::istream &Strm, Wektor &Wek);
  */
 std::ostream& operator << (std::ostream &Strm, const Wektor &Wek);
 
+Wektor operator - (Wektor wk1, Wektor wk2);
+Wektor operator + (Wektor wk1, Wektor wk2);
+double operator * (Wektor wk1, Wektor wk2);
+Wektor operator * (Wektor wk1, double wk2);
 #endif
