@@ -50,5 +50,6 @@ std::istream& operator >> (std::istream &Strm, UkladRownanLiniowych &UklRown);
  */
 std::ostream& operator << ( std::ostream&Strm, const UkladRownanLiniowych&UklRown);
 
-
+Wektor rozwiazcramer(UkladRownanLiniowych Ukl);
+Wektor WektorBledu(UkladRownanLiniowych Ukl1);
 #endif

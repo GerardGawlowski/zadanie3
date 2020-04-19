@@ -30,6 +30,7 @@ std::ostream& operator << (std::ostream& Strm, const Macierz& Mac)
     return Strm;
 }
 /* metoda eliminacji gaussa*/
+int Minus;
 Macierz Gauss(Macierz Mac)
 {
     Wektor Wynik;                           /*wektor pomocniczny*/
@@ -38,17 +39,21 @@ Macierz Gauss(Macierz Mac)
     {
         Wektor temp = Kac.getWektor(i);     /*Pobranie wektora do zmiennej pomocniczej temp*/
         double a=temp.getSkladowa(i);       /*Pobranie odpowiedniej skladowej wektora do eliminacji*/
+        
         if (a == 0)                         /* petla sprawdzajaca czy a jest zerem i zamieniajaca odpowiednio wiersze zeby moc kontynuowac obliczanie*/
         {
             
             for ( int y=i+1; a==0; y++)
             {
-                Wynik = Kac.getWektor(y);
-                a = Wynik.getSkladowa(i);
-                if (a != 0)
+                if (y < ROZMIAR)
                 {
-                    Kac.setWektor(y, temp);
-                    Kac.setWektor(i, Wynik);
+                    Wynik = Kac.getWektor(y);
+                    a = Wynik.getSkladowa(i);
+                    if (a != 0)
+                    {
+                        Kac.setWektor(y, (temp * -1));
+                        Kac.setWektor(i, Wynik);
+                    }
                 }
             }
            temp = Kac.getWektor(i);
@@ -62,7 +67,7 @@ Macierz Gauss(Macierz Mac)
             if (a != 0) {
                 c = b / a;
             }
-            else if (a==0)
+            else
             {
                 c = 0;
             }
@@ -73,13 +78,18 @@ Macierz Gauss(Macierz Mac)
     }
     return Kac;
 }
-double WyznG(Macierz Mac)
+double Wyznacznik(Macierz Mac)
 {
+    Macierz kek = Gauss(Mac);
     double wynik = 1;
     for (int i = 0; i < ROZMIAR; i++)
     {
-        Wektor temp = Mac.getWektor(i);
+        Wektor temp = kek.getWektor(i);
         wynik *= temp.getSkladowa(i);
+    }
+    if (Minus == 1)
+    {
+       wynik = wynik * (-1);
     }
     return wynik;
 }
@@ -100,3 +110,20 @@ Macierz root(Macierz Mac)
     }
     return Wynik;
 }
+
+Wektor operator * (Wektor wk1, Macierz Mac)
+{
+    Wektor Wynik;
+    Wektor doMnozenia;
+    for (int i = 0; i < ROZMIAR; i++)
+    {
+        for (int j = 0; j < ROZMIAR; j++)
+        {
+            Wektor petla=Mac.getWektor(j);
+            doMnozenia.setSkladowa(j, petla.getSkladowa(i));
+        }
+        Wynik.setSkladowa(i, doMnozenia * wk1);
+    }
+    return Wynik;
+}
+

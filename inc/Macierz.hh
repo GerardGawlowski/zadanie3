@@ -45,6 +45,8 @@ std::istream& operator >> (std::istream &Strm, Macierz &Mac);
  */
 std::ostream& operator << (std::ostream &Strm, const Macierz &Mac);
 Macierz Gauss(Macierz Mac);
-double WyznG(Macierz Mac);
+double Wyznacznik(Macierz Mac);
 Macierz root(Macierz Mac);
+Wektor operator * (Wektor wk1, Macierz Mac);
+Macierz transponowanie(Macierz Mac);
 #endif
