@@ -39,5 +39,6 @@ Macierz Gauss(Macierz Mac);                                                 /*Zm
 double Wyznacznik(Macierz Mac);                                             /*Oblicza wyznacznik macierzy trójk¹tnej*/
 Macierz root(Macierz Mac);                                                  /*Podnosi macierz do kwadratu*/
 Wektor operator * (Wektor wk1, Macierz Mac);                                /*Mno¿enie Macierzy przez wektor*/
-
+Macierz operator - (Macierz Mac1, Macierz Mac2);
+Macierz operator * (Macierz Mac1, Macierz Mac2);
 #endif

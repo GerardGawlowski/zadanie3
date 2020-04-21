@@ -122,3 +122,34 @@ Wektor operator * (Wektor wk1, Macierz Mac)
     return Wynik;
 }
 
+Macierz operator - (Macierz Mac1, Macierz Mac2)
+{
+    Macierz Wynik;
+    for (int i = 0; i < ROZMIAR; i++)
+    {
+        Wektor Obrobka = Mac1.getWektor(i) - Mac2.getWektor(i);
+        Wynik.setWektor(i, Obrobka);
+    }
+    return Wynik;
+}
+
+Macierz operator * (Macierz Mac1, Macierz Mac2)
+{
+    Macierz Wynik;
+    Wektor doMnozenia;
+    Wektor malywynik;
+    for (int i = 0; i < ROZMIAR; i++)
+    {
+        for (int j = 0; j < ROZMIAR; j++)
+        {
+            Wektor petla = Mac1.getWektor(j);
+            doMnozenia.setSkladowa(j, petla.getSkladowa(i));
+            for (int x = 0; x < ROZMIAR; x++)
+            {
+                malywynik.setSkladowa(x, doMnozenia * Mac2.getWektor(x));
+            }
+        }
+        Wynik.setWektor(i,malywynik);
+    }
+    return Wynik;
+}
