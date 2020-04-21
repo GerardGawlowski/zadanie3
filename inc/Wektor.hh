@@ -31,27 +31,19 @@ private:
 
 
 /*
- * To przeciazenie trzeba opisac. Co ono robi. Jaki format
- * danych akceptuje. Jakie jest znaczenie parametrow itd.
- * Szczegoly dotyczace zalecen realizacji opisow mozna
- * znalezc w pliku:
- *    ~bk/edu/kpo/zalecenia.txt 
+ Zapisuje wektor za pomoc¹ operatora >>
  */
 std::istream& operator >> (std::istream &Strm, Wektor &Wek);
 
 /*
- * To przeciazenie trzeba opisac. Co ono robi. Jaki format
- * danych akceptuje. Jakie jest znaczenie parametrow itd.
- * Szczegoly dotyczace zalecen realizacji opisow mozna
- * znalezc w pliku:
- *    ~bk/edu/kpo/zalecenia.txt 
+ Wyœwietla wektor za pomoc¹ operatora <<
  */
 std::ostream& operator << (std::ostream &Strm, const Wektor &Wek);
 
-Wektor operator - (Wektor wk1, Wektor wk2);
-Wektor operator + (Wektor wk1, Wektor wk2);
-double operator * (Wektor wk1, Wektor wk2);
-Wektor operator * (Wektor wk1, double wk2);
+Wektor operator - (Wektor wk1, Wektor wk2);                   /*Ró¿nica wektorów*/
+Wektor operator + (Wektor wk1, Wektor wk2);                   /*Suma wektorów*/
+double operator * (Wektor wk1, Wektor wk2);                   /*iloczyn skalarny wektorów*/
+Wektor operator * (Wektor wk1, double wk2);                   /*Mno¿enie wektora przez liczbê*/
 
-Wektor IloczynWR3(Wektor wk1, Wektor wk2);
+Wektor IloczynWR3(Wektor wk1, Wektor wk2);                    /*Iloczyn wektorowy wektorów*/
 #endif

@@ -7,19 +7,11 @@
 
 using namespace std;
 
-/*
- * Tu definiujemy pozostale funkcje.
- * Lepiej jednak stworzyc dodatkowy modul
- * i tam je umiescic. Ten przyklad pokazuje
- * jedynie absolutne minimum.
- */
-
-
 int main()
 {
     cout << endl << " Start programu " << endl << endl;
     
-   UkladRownanLiniowych kek;
+   UkladRownanLiniowych kek;                
         cin >> kek;
         cout << endl;
         cout << "Macierz A^T:" << endl;

@@ -1,12 +1,7 @@
 #include "../inc/Macierz.hh"
 #include <iostream>
 
-/*
- *  Tutaj nalezy zdefiniowac odpowiednie metody
- *  klasy Macierz, ktore zawieraja wiecej kodu
- *  niz dwie linijki.
- *  Mniejsze metody mozna definiwac w ciele klasy.
- */
+
 std::istream& operator >> (std::istream& Strm, Macierz& Mac)
 {
     for (int i = 0; i < ROZMIAR; i++)
@@ -78,7 +73,7 @@ Macierz Gauss(Macierz Mac)
     }
     return Kac;
 }
-double Wyznacznik(Macierz Mac)
+double Wyznacznik(Macierz Mac)  
 {
     Macierz kek = Gauss(Mac);
     double wynik = 1;

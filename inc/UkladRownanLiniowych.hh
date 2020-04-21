@@ -33,23 +33,15 @@ private:
 
 
 /*
- * To przeciazenie trzeba opisac. Co ono robi. Jaki format
- * danych akceptuje. Jakie jest znaczenie parametrow itd.
- * Szczegoly dotyczace zalecen realizacji opisow mozna
- * znalezc w pliku:
- *    ~bk/edu/kpo/zalecenia.txt 
+ Zapisywanie uk³adu równañ za pomoc¹ operatora >> 
  */
 std::istream& operator >> (std::istream &Strm, UkladRownanLiniowych &UklRown);
 
 /*
- * To przeciazenie trzeba opisac. Co ono robi. Jaki format
- * danych akceptuje. Jakie jest znaczenie parametrow itd.
- * Szczegoly dotyczace zalecen realizacji opisow mozna
- * znalezc w pliku:
- *    ~bk/edu/kpo/zalecenia.txt 
+ Wyœwietlanie uk³adu równañ za pomoc¹ operatora << 
  */
 std::ostream& operator << ( std::ostream&Strm, const UkladRownanLiniowych&UklRown);
 
-Wektor rozwiazcramer(UkladRownanLiniowych Ukl);
-Wektor WektorBledu(UkladRownanLiniowych Ukl1);
+Wektor rozwiazcramer(UkladRownanLiniowych Ukl);                                         /*Rozwiazuje uklad rownan za pomoca algorytmu cramera*/
+Wektor WektorBledu(UkladRownanLiniowych Ukl1);                                          /*Oblicza wektor bledu*/
 #endif
