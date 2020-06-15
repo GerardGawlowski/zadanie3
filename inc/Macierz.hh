@@ -7,8 +7,7 @@
 
 
 /*
- *  Tutaj trzeba opisac klase. Jakie pojecie modeluje ta klasa
- *  i jakie ma glowne cechy.
+ * Klasa modeluje Macierz w postaci tablicy wektorów reprezentuj¹cych kolumny
  */
 class Macierz {
 public:
@@ -28,22 +27,18 @@ private:
 
 
 /*
- * To przeciazenie trzeba opisac. Co ono robi. Jaki format
- * danych akceptuje. Jakie jest znaczenie parametrow itd.
- * Szczegoly dotyczace zalecen realizacji opisow mozna
- * znalezc w pliku:
- *    ~bk/edu/kpo/zalecenia.txt 
+ Zapisuje Macierz za pomoc¹ operatora >>
  */
 std::istream& operator >> (std::istream &Strm, Macierz &Mac);
 
 /*
- * To przeciazenie trzeba opisac. Co ono robi. Jaki format
- * danych akceptuje. Jakie jest znaczenie parametrow itd.
- * Szczegoly dotyczace zalecen realizacji opisow mozna
- * znalezc w pliku:
- *    ~bk/edu/kpo/zalecenia.txt 
+ Wyœwietla Macierz za pomoc¹ operatora <<
  */
 std::ostream& operator << (std::ostream &Strm, const Macierz &Mac);
-Macierz Gauss(Macierz Mac);
-double WyznG(Macierz Mac);
+Macierz Gauss(Macierz Mac);                                                 /*Zmienia macierz za pomoc¹ algorytmu gaussa do macierzy trójk¹tnej */
+double Wyznacznik(Macierz Mac);                                             /*Oblicza wyznacznik macierzy trójk¹tnej*/
+Macierz root(Macierz Mac);                                                  /*Podnosi macierz do kwadratu*/
+Wektor operator * (Wektor wk1, Macierz Mac);                                /*Mno¿enie Macierzy przez wektor*/
+Macierz operator - (Macierz Mac1, Macierz Mac2);
+Macierz operator * (Macierz Mac1, Macierz Mac2);
 #endif

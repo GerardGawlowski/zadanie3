@@ -1,7 +1,7 @@
 
 #include <iostream>
 #include "../inc/Wektor.hh"
-
+#include "../inc/Macierz.hh"
 /*
  *  Tutaj nalezy zdefiniowac odpowiednie metody
  *  klasy Wektor, ktore zawieraja wiecej kodu
@@ -12,7 +12,7 @@ std::istream& operator >> (std::istream& Strm, Wektor& Wek)
 {
     for (int i = 0; i < ROZMIAR; i++)
     {
-        int a;
+        double a;
         Strm >> a;
        Wek.setSkladowa(i, a);
     }
@@ -84,3 +84,16 @@ Wektor operator * (Wektor wk1, double wk2)
     }
     return wynik;
 }
+
+Wektor IloczynWR3(Wektor wk1, Wektor wk2)
+{
+    Wektor Wynik;
+    double a = (wk1.getSkladowa(1) * wk2.getSkladowa(2)) - (wk1.getSkladowa(2) * wk2.getSkladowa(1));
+    double b = (((wk1.getSkladowa(0) * wk2.getSkladowa(2)) - (wk1.getSkladowa(2) * wk2.getSkladowa(0)))*(-1));
+    double c = (wk1.getSkladowa(0) * wk2.getSkladowa(1)) - (wk1.getSkladowa(1) * wk2.getSkladowa(0));
+    Wynik.setSkladowa(0, a);
+    Wynik.setSkladowa(1, b);
+    Wynik.setSkladowa(2, c);
+    return Wynik;
+}
+
