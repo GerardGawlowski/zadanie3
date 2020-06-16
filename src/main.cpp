@@ -7,22 +7,25 @@
 
 using namespace std;
 
-/*
- * Tu definiujemy pozostale funkcje.
- * Lepiej jednak stworzyc dodatkowy modul
- * i tam je umiescic. Ten przyklad pokazuje
- * jedynie absolutne minimum.
- */
-
-
 int main()
 {
     cout << endl << " Start programu " << endl << endl;
-
-    Macierz kek;
+    
+   UkladRownanLiniowych kek;                
         cin >> kek;
         cout << endl;
-        Macierz temp = Gauss(kek);
-        cout << temp << endl;
-        cout << WyznG(temp);
+        cout << "Macierz A^T:" << endl;
+        cout << kek.getMacierz() << endl;
+        cout << "Wektor wyrazow wolnych b:" << endl;
+        cout << kek.getWektor() << endl;
+        cout << "Rozwiazanie x = (";
+        for (int i = 0; i < ROZMIAR; i++)
+        {
+            cout << "x" << i << " ";
+        }
+        cout << "):" << endl;
+        cout << rozwiazcramer(kek);
+        Wektor blad = WektorBledu(kek);
+        cout << "Wektor bledu:  " << blad << endl;
+        cout << "Dlugosc wektora bledu:  " << blad * blad; /*bo blad rodzi blad :-----D */
 }
